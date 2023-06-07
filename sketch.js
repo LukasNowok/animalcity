@@ -8,6 +8,7 @@ function setup() {
     alert("navigator.geolocation is not available");
   }
 }
+
 function draw(){
   navigator.geolocation.getCurrentPosition(setPos);
 }
