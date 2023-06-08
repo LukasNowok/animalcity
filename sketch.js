@@ -35,7 +35,7 @@ function setup() {
   };
 
   //watchPosition(positionChanged, watchOptions);
-  intervalCurrentPosition(onGetPosition, 200);
+  intervalCurrentPosition(onGetPosition, 200, onGetPositionError);
 }
 
 function positionChanged(position){
@@ -57,6 +57,11 @@ function onGetPosition(position){
   text(nf(position.latitude,2,8) + " " + nf(position.longitude,2,8), 10, height/2);
   text(distanceToStart*1000, 10, height/1.5);
   positionToFrequency(distanceToStart);
+}
+
+onGetPositionError(){
+  background(234, 51, 35);
+  text("can't find position", 10, height/2);
 }
 
 function positionToFrequency(distance){
