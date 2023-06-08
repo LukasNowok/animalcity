@@ -46,9 +46,11 @@ function positionToFrequency(){
 
 function soundOnOff(){
   if(oscPlaying){
-    osc.start();
-  } else {
     osc.stop();
+    oscPlaying = 0;
+  } else {
+    osc.start();
+    oscPlaying = 1;
   }
 
 }
