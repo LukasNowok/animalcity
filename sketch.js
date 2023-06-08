@@ -1,6 +1,10 @@
 // must be in HTTPS
 
-let osc;
+let osc, startPosition, distanceToStart;
+
+function preload(){
+  startPosition = getCurrentPosition();
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -26,9 +30,11 @@ function setup() {
 }
 
 function positionChanged(position){
+    distanceToStart = calcGeoDistance(position.latitude,position.longitude,startPosition.latitude,startPosition.longitude);
     print("lat: " + position.latitude);
     print("long: " + position.longitude);
     text(nf(position.latitude,2,8) + " " + nf(position.longitude,2,8), 10, height/2);
+    text(distanceToStart, height/1.5);
 }
 
 function positionToFrequency(){
