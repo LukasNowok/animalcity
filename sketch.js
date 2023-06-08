@@ -5,14 +5,15 @@ let osc;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   console.log('starting');
-	stroke(0);
+	noStroke();
+  fill(255);
 
   textSize(18);
   text("animalcity", height/3);
 
   osc = new p5.Oscillator('sine');
-  osc.amp(0.2);
-  osc.freq(200);
+  osc.amp(0.5, 0);
+  osc.freq(200, 0);
 
   // get position once
   if(geoCheck() == true) {
@@ -31,7 +32,7 @@ function positionChanged(position){
 }
 
 function positionToFrequency(){
-  
+
 }
 
 /*
