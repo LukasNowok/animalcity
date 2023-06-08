@@ -45,6 +45,7 @@ function positionChanged(position){
     positionToFrequency(distanceToStart);
 }
 
+/*
 function onGetPosition(position){
   background(135, 200, 118);
   distanceToStart = calcGeoDistance(position.latitude,position.longitude,startPosition.latitude,startPosition.longitude, 'km');
@@ -54,6 +55,7 @@ function onGetPosition(position){
   text(distanceToStart*1000, 10, height/1.5);
   positionToFrequency(distanceToStart);
 }
+*/
 
 function positionToFrequency(distance){
   osc.freq(map(distance*1000, 0, 100, 400, 800), 1);
@@ -67,12 +69,6 @@ function soundOnOff(){
     osc.start();
     oscPlaying = 1;
   }
-}
-
-////////////////
-////////////////
-function draw(){
-  //getCurrentPosition(onGetPosition);
 }
 
 /*
