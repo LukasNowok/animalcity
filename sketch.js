@@ -27,14 +27,12 @@ function setup() {
      background(234, 51, 35);
   }
 
-  /*
   let watchOptions = {
   enableHighAccuracy: true,
   timeout: 5000,
   maximumAge: 0
   };
   watchPosition(positionChanged, watchOptions);
-  */
 }
 
 function positionChanged(position){
@@ -44,6 +42,7 @@ function positionChanged(position){
     print("long: " + position.longitude);
     text(nf(position.latitude,2,8) + " " + nf(position.longitude,2,8), 10, height/2);
     text(distanceToStart*1000, 10, height/1.5);
+    positionToFrequency(distanceToStart);
 }
 
 function onGetPosition(position){
@@ -73,7 +72,7 @@ function soundOnOff(){
 ////////////////
 ////////////////
 function draw(){
-  getCurrentPosition(onGetPosition);
+  //getCurrentPosition(onGetPosition);
 }
 
 /*
