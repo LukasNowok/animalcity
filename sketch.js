@@ -9,11 +9,9 @@ function preload(){
 function setup() {
   createCanvas(windowWidth, windowHeight);
   console.log('starting');
-	noStroke();
+  noStroke();
   fill(255);
-
   textSize(18);
-  text("animalcity", height/3);
 
   osc = new p5.Oscillator('sine');
   osc.amp(0.5, 0);
@@ -27,7 +25,8 @@ function setup() {
   } else {
      background(234, 51, 35);
   }
-  watchPosition(positionChanged)
+  watchPosition(positionChanged);
+  text("animalcity", height/3);
 }
 
 function positionChanged(position){
