@@ -30,15 +30,16 @@ function setup() {
 
   let watchOptions = {
   enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
+  timeout: 200,
+  maximumAge: 200
   };
 
   watchPosition(positionChanged, watchOptions);
+  //getCurrentPosition(onGetPosition, 500);
 }
 
 function positionChanged(position){
-  /*
+
     background(135, 200, 118);
     distanceToStart = calcGeoDistance(position.latitude,position.longitude,startPosition.latitude,startPosition.longitude, 'km');
     print("lat: " + position.latitude);
@@ -46,7 +47,6 @@ function positionChanged(position){
     text(nf(position.latitude,2,8) + " " + nf(position.longitude,2,8), 10, height/2);
     text(distanceToStart*1000, 10, height/1.5);
     positionToFrequency(distanceToStart);
-    */
 }
 
 function onGetPosition(position){
@@ -71,10 +71,6 @@ function soundOnOff(){
     osc.start();
     oscPlaying = 1;
   }
-}
-
-function draw(){
-  getCurrentPosition(onGetPosition);
 }
 
 /*
