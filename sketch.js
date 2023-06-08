@@ -3,11 +3,11 @@
 let osc, oscPlaying, startPosition, distanceToStart;
 
 function preload(){
-  startPosition = getCurrentPosition();
+  //startPosition = getCurrentPosition();
 }
 
 function setup() {
-  frameRate(4);
+  frameRate(16);
   createCanvas(windowWidth, windowHeight);
   console.log('starting');
   noStroke();
@@ -60,7 +60,7 @@ function onGetPosition(position){
 }
 
 function positionToFrequency(distance){
-  osc.freq(map(distance*1000, 0, 100, 400, 800), 1);
+  osc.freq(map(distance*1000, 0, 100, 400, 800), 4.0);
 }
 
 function soundOnOff(){
