@@ -34,8 +34,8 @@ function setup() {
   maximumAge: 200
   };
 
-  watchPosition(positionChanged, watchOptions);
-  //getCurrentPosition(onGetPosition, 500);
+  //watchPosition(positionChanged, watchOptions);
+  getCurrentPosition(onGetPosition, 200);
 }
 
 function positionChanged(position){
