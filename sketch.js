@@ -30,12 +30,12 @@ function setup() {
 
   let watchOptions = {
   enableHighAccuracy: true,
-  timeout: 200,
-  maximumAge: 200
+  timeout: 500,
+  maximumAge: 0
   };
 
-  //watchPosition(positionChanged, watchOptions);
-  getCurrentPosition(onGetPosition, 100);
+  watchPosition(positionChanged, watchOptions);
+  //getCurrentPosition(onGetPosition, 100);
 }
 
 function positionChanged(position){
