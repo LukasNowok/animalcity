@@ -4,11 +4,21 @@ function setup() {
   console.log('starting');
 	noStroke();
   // get position once
-  if (!navigator.geolocation) {
-    alert("navigator.geolocation is not available");
+  if(geoCheck() == true {
+     background(135, 200, 118);
+  } else {
+     background(234, 51, 35);
   }
+  watchPosition(positionChanged)
 }
 
+function positionChanged(position){
+    print("lat: " + position.latitude);
+    print("long: " + position.longitude);
+    text(nf(position.latitude,2,8) + " " + nf(position.longitude,2,8), 10, height/2);
+}
+
+/*
 function draw(){
   navigator.geolocation.getCurrentPosition(setPos);
 }
@@ -21,3 +31,4 @@ function setPos(position) {
   textSize(18);
   text(nf(lat,2,8) + " " + nf(lng,2,8), 10, height/2);
 }
+*/
