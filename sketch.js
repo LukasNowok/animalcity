@@ -22,6 +22,7 @@ function setup() {
   // get position once
   if(geoCheck() == true) {
      background(135, 200, 118);
+     startPosition = getCurrentPosition();
      osc.start();
   } else {
      background(234, 51, 35);
@@ -30,7 +31,7 @@ function setup() {
 }
 
 function positionChanged(position){
-    distanceToStart = calcGeoDistance(position.latitude,position.longitude,startPosition.latitude,startPosition.longitude);
+    distanceToStart = calcGeoDistance(position.latitude,position.longitude,startPosition.latitude,startPosition.longitude, 'km');
     print("lat: " + position.latitude);
     print("long: " + position.longitude);
     text(nf(position.latitude,2,8) + " " + nf(position.longitude,2,8), 10, height/2);
