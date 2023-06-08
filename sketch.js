@@ -26,7 +26,7 @@ function setup() {
      background(234, 51, 35);
   }
   watchPosition(positionChanged);
-  text("animalcity", height/3);
+  text("animalcity", 10, height/3);
 }
 
 function positionChanged(position){
@@ -34,7 +34,7 @@ function positionChanged(position){
     print("lat: " + position.latitude);
     print("long: " + position.longitude);
     text(nf(position.latitude,2,8) + " " + nf(position.longitude,2,8), 10, height/2);
-    text(distanceToStart, height/1.5);
+    text(distanceToStart, 10, height/1.5);
 }
 
 function positionToFrequency(){
