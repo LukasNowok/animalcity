@@ -7,6 +7,7 @@ function preload(){
 }
 
 function setup() {
+  frameRate(4);
   createCanvas(windowWidth, windowHeight);
   console.log('starting');
   noStroke();
@@ -32,10 +33,12 @@ function setup() {
   timeout: 5000,
   maximumAge: 0
   };
+
   watchPosition(positionChanged, watchOptions);
 }
 
 function positionChanged(position){
+  /*
     background(135, 200, 118);
     distanceToStart = calcGeoDistance(position.latitude,position.longitude,startPosition.latitude,startPosition.longitude, 'km');
     print("lat: " + position.latitude);
@@ -43,9 +46,9 @@ function positionChanged(position){
     text(nf(position.latitude,2,8) + " " + nf(position.longitude,2,8), 10, height/2);
     text(distanceToStart*1000, 10, height/1.5);
     positionToFrequency(distanceToStart);
+    */
 }
 
-/*
 function onGetPosition(position){
   background(135, 200, 118);
   distanceToStart = calcGeoDistance(position.latitude,position.longitude,startPosition.latitude,startPosition.longitude, 'km');
@@ -55,7 +58,6 @@ function onGetPosition(position){
   text(distanceToStart*1000, 10, height/1.5);
   positionToFrequency(distanceToStart);
 }
-*/
 
 function positionToFrequency(distance){
   osc.freq(map(distance*1000, 0, 100, 400, 800), 1);
@@ -69,6 +71,10 @@ function soundOnOff(){
     osc.start();
     oscPlaying = 1;
   }
+}
+
+function draw(){
+  getCurrentPosition(onGetPosition);
 }
 
 /*
