@@ -3,7 +3,7 @@
 let osc, oscPlaying, startPosition, distanceToStart;
 
 function preload(){
-  //startPosition = getCurrentPosition();
+  startPosition = getCurrentPosition();
 }
 
 function setup() {
@@ -35,7 +35,7 @@ function setup() {
   };
 
   //watchPosition(positionChanged, watchOptions);
-  getCurrentPosition(onGetPosition, 200);
+  getCurrentPosition(onGetPosition, 100);
 }
 
 function positionChanged(position){
