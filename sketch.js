@@ -16,7 +16,8 @@ function setup() {
   osc = new p5.Oscillator('sine');
   osc.amp(0.5, 0);
   osc.freq(200, 0);
-  oscPlaying = 0;
+  oscPlaying = 1;
+  osc.start();
   oscButton = createButton('sound on/off');
   oscButton.position(10,10);
   oscButton.mousePressed(soundOnOff);
