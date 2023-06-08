@@ -4,7 +4,7 @@ function setup() {
   console.log('starting');
 	noStroke();
   // get position once
-  if(geoCheck() == true {
+  if(geoCheck() == true) {
      background(135, 200, 118);
   } else {
      background(234, 51, 35);
