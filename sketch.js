@@ -29,7 +29,14 @@ function setup() {
   } else {
      background(234, 51, 35);
   }
-  watchPosition(positionChanged);
+
+  let watchOptions = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+  };
+  
+  watchPosition(positionChanged, watchOptions);
 }
 
 function positionChanged(position){
