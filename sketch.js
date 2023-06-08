@@ -3,6 +3,10 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   console.log('starting');
 	noStroke();
+  
+  fill(255);
+  textSize(18);
+  text("animalcity", height/3);
   // get position once
   if(geoCheck() == true) {
      background(135, 200, 118);
